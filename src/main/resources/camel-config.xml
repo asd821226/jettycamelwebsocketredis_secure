@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:camel="http://camel.apache.org/schema/spring"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+    <!-- Here we define Camel, notice the namespace it uses -->
+    <camelContext xmlns="http://camel.apache.org/schema/spring" trace="true">
+        <routeBuilder ref="redis-sub-route-id" ></routeBuilder> 
+        
+    </camelContext>
+
+
+    <bean id="redis-sub-route-id" class="demo.websocket.RedisSubscriberRoute" />
+    <bean id="redisserializer" class="org.springframework.data.redis.serializer.StringRedisSerializer" /> 
+
+</beans>
+
