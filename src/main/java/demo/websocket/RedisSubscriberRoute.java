@@ -24,7 +24,7 @@ public class RedisSubscriberRoute extends RouteBuilder{
 
 		WebsocketComponent wc = getContext().getComponent("websocket", WebsocketComponent.class);
 		KeyStoreParameters ksp = new KeyStoreParameters();
-		//ksp.setResource("C:\\Users\\GENE\\git\\jettycamelwebsocketredis\\src\\main\\resources\\keystore");
+                //IMP: This Path to the keystore should be setup correctly
 		ksp.setResource("/tmp/ssl/jettycamelwebsocketredis/src/main/resources/keystore");
 		ksp.setPassword("password");
 		KeyManagersParameters kmp = new KeyManagersParameters();
